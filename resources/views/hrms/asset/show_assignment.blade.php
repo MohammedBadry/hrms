@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Assigned Assets </a>
+                    <a href=""> {{ trans('main.assigned_assets') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Assignment Listings </li>
+                <li class="breadcrumb-current-item"> {{ trans('main.assignment_listings') }} </li>
             </ol>
         </div>
     </header>
@@ -36,7 +36,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Asset Assignment Listings </span>
+                            <span class="panel-title hidden-xs"> {{ trans('main.assignment_listings') }} </span>
                         </div>
                         <div class="panel-body pn">
                             @if(Session::has('flash_message'))
@@ -49,13 +49,13 @@
                                 <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                     <thead>
                                     <tr class="bg-light">
-                                        <th class="text-center">Id</th>
-                                    <th class="text-center">Employee</th>
-                                    <th class="text-center">Asset</th>
-                                        <th class="text-center">Issuing Authority</th>
-                                    <th class="text-center">Date of Assignment</th>
-                                    <th class="text-center">Date of Release</th>
-                                    <th class="text-center">Actions</th>
+                                        <th class="text-center">{{ trans('main.id') }}</th>
+                                    <th class="text-center">{{ trans('main.employee') }}</th>
+                                    <th class="text-center">{{ trans('main.asset') }}</th>
+                                        <th class="text-center">{{ trans('main.issue_authority') }}</th>
+                                    <th class="text-center">{{ trans('main.assignment_date') }}</th>
+                                    <th class="text-center">{{ trans('main.release_date') }}</th>
+                                    <th class="text-center">{{ trans('main.actions') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -72,15 +72,15 @@
                                             <div class="btn-group text-right">
                                                 <button type="button"
                                                         class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false"> Action
+                                                        data-toggle="dropdown" aria-expanded="false"> {{ trans('main.action') }}
                                                     <span class="caret ml5"></span>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
                                                     <li>
-                                                        <a href="/edit-asset-assignment/{{$asset->id}}">Edit</a>
+                                                        <a href="/edit-asset-assignment/{{$asset->id}}">{{ trans('main.edit') }}</a>
                                                     </li>
                                                     <li>
-                                                        <a href="/delete-asset-assignment/{{$asset->id}}">Delete</a>
+                                                        <a href="/delete-asset-assignment/{{$asset->id}}">{{ trans('main.delete') }}</a>
                                                     </li>
                                                 </ul>
                                             </div>

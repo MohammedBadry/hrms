@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Leave </a>
+                    <a href=""> {{ trans('main.leaves') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Apply Leave</li>
+                <li class="breadcrumb-current-item"> {{ trans('main.apply_leave') }}</li>
             </ol>
         </div>
     </header>
@@ -31,7 +31,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Apply for Leave</span>
+                            <span class="panel-title hidden-xs"> {{ trans('main.apply_leave') }} </span>
                         </div>
                     <div class="text-center" id="show-leave-count"></div>
                         <div class="panel-body pn">
@@ -48,13 +48,13 @@
                                     {!! Form::open(['class' => 'form-horizontal', 'method' => 'post']) !!}
 
                                     <div class="form-group">
-                                        <label class="col-md-2 control-label"> Leave Type </label>
+                                        <label class="col-md-2 control-label"> {{ trans('main.leave_type') }} </label>
                                         <div class="col-md-10">
                                             <input type="hidden" value="{!! csrf_token() !!}" id="token">
                                             <input type="hidden" value="{{\Auth::user()->id}}" id="user_id">
                                             <select class="select2-multiple form-control select-primary leave_type"
                                                     name="leave_type" required>
-                                                <option value="" selected>Select One</option>
+                                                <option value="" selected>{{ trans('main.select') }}</option>
                                                 @foreach($leaves as $leave)
                                                     <option value="{{$leave->id}}">{{$leave->leave_type}}</option>
                                                 @endforeach
@@ -64,7 +64,7 @@
 
 
                                     <div class="form-group">
-                                        <label for="date_from" class="col-md-2 control-label"> Date From </label>
+                                        <label for="date_from" class="col-md-2 control-label"> {{ trans('main.date_from') }} </label>
                                         <div class="col-md-3">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -74,7 +74,7 @@
                                                        name="dateFrom" required>
                                             </div>
                                         </div>
-                                        <label for="date_to" class="col-md-2 control-label"> Date To </label>
+                                        <label for="date_to" class="col-md-2 control-label"> {{ trans('main.date_to') }} </label>
                                         <div class="col-md-3">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -89,7 +89,7 @@
 
 
                                     <div class="form-group">
-                                        <label for="time_from" class=" col-md-2 control-label  "> Time From </label>
+                                        <label for="time_from" class=" col-md-2 control-label  "> {{ trans('main.time_from') }} </label>
                                         <div class="col-md-3">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -99,7 +99,7 @@
                                                        name="time_from" required>
                                             </div>
                                         </div>
-                                        <label for="time_to" class="col-md-2 control-label"> Time To </label>
+                                        <label for="time_to" class="col-md-2 control-label"> {{ trans('main.time_to') }} </label>
                                         <div class="col-md-3">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
@@ -111,14 +111,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input002" class="col-md-2 control-label"> Days </label>
+                                        <label for="input002" class="col-md-2 control-label"> {{ trans('main.days') }} </label>
                                         <div class="col-md-10">
                                             <input id="total_days" name="number_of_days" value="" readonly="readonly"
                                                    type="text" size="90" class="select2-single form-control"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="input002" class="col-md-2 control-label"> Reason </label>
+                                        <label for="input002" class="col-md-2 control-label"> {{ trans('main.reason') }} </label>
                                         <div class="col-md-10">
                                             <input type="text" id="textarea1" class="select2-single form-control"
                                                    name="reason" required>
@@ -132,10 +132,10 @@
                                         <div class="col-md-2">
 
                                                 <input type="submit" class="btn btn-bordered btn-info btn-block"
-                                                             value="Submit">
+                                                             value="{{ trans('main.submit') }}">
                                         </div>
                                         <div class="col-md-2"><a href="/apply-leave" >
-                                                <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
 
                                     </div>
 

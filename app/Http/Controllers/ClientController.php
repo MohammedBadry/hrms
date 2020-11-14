@@ -42,8 +42,27 @@ class ClientController extends Controller
      */
     public function saveClient(Request $request)
     {
+        $name = json_encode([
+            'ar' => $request->name_ar,
+            'en' => $request->name_en
+        ], JSON_UNESCAPED_UNICODE);
+        $company = json_encode([
+            'ar' => $request->company_ar,
+            'en' => $request->company_en
+        ], JSON_UNESCAPED_UNICODE);
+        $address = json_encode([
+            'ar' => $request->address_ar,
+            'en' => $request->address_en
+        ], JSON_UNESCAPED_UNICODE);
+        $data = [
+            'name' => $name,
+            'address' =>$address,
+            'company' =>$company,
+            'code' =>$request->code,
+        ];
         $client = new Client();
-        $client->fill(array_except($request->all(),'_token'));
+        //$client->fill(array_except($request->all(),'_token')); This before adding languages
+        $client->fill($data);
         $client->save();
         \Session::flash('flash_message', 'Client saved successfully');
         return redirect()->back();
@@ -78,8 +97,28 @@ class ClientController extends Controller
     public function saveClientEdit(Request $request, $clientId)
     {
         try {
+            $name = json_encode([
+                'ar' => $request->name_ar,
+                'en' => $request->name_en
+            ], JSON_UNESCAPED_UNICODE);
+            $company = json_encode([
+                'ar' => $request->company_ar,
+                'en' => $request->company_en
+            ], JSON_UNESCAPED_UNICODE);
+            $address = json_encode([
+                'ar' => $request->address_ar,
+                'en' => $request->address_en
+            ], JSON_UNESCAPED_UNICODE);
+            $data = [
+                'name' => $name,
+                'address' =>$address,
+                'company' =>$company,
+                'code' =>$request->code,
+            ];
+    
             $client = Client::where('id', $clientId)->first();
-            $client->fill(array_except($request->all(), '_token'));
+            //$client->fill(array_except($request->all(), '_token'));
+            $client->fill($data);
             $client->save();
 
             \Session::flash('flash_message', 'Client saved successfully');

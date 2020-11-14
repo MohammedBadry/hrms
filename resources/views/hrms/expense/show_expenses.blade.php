@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Added Expenses </a>
+                        <a href=""> {{ trans('main.expenses') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Expense Listings </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.expense_listings') }} </li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title hidden-xs"> Added Expense Listings </span>
+                                <span class="panel-title hidden-xs"> {{ trans('main.expense_listings') }} </span>
                             </div>
                             <div class="panel-body pn">
                                 @if(Session::has('flash_message'))
@@ -49,13 +49,13 @@
                                     <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                         <thead>
                                         <tr class="bg-light">
-                                            <th class="text-center">Id</th>
-                                            <th class="text-center">Employee</th>
-                                            <th class="text-center">Item</th>
-                                            <th class="text-center">Purchase From</th>
-                                            <th class="text-center">Date of Purchase</th>
-                                            <th class="text-center">Amount</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">{{ trans('main.id') }}</th>
+                                            <th class="text-center">{{ trans('main.employee') }}</th>
+                                            <th class="text-center">{{ trans('main.item_bought') }}</th>
+                                            <th class="text-center">{{ trans('main.item_bought_from') }}</th>
+                                            <th class="text-center">{{ trans('main.purchase_date') }}</th>
+                                            <th class="text-center">{{ trans('main.amount') }}</th>
+                                            <th class="text-center">{{ trans('main.actions') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -72,15 +72,15 @@
                                                     <div class="btn-group text-right">
                                                         <button type="button"
                                                                 class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                data-toggle="dropdown" aria-expanded="false"> Action
+                                                                data-toggle="dropdown" aria-expanded="false"> {{ trans('main.action') }}
                                                             <span class="caret ml5"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li>
-                                                                <a href="/edit-expense/{{$expense->id}}">Edit</a>
+                                                                <a href="/edit-expense/{{$expense->id}}">{{ trans('main.edit') }}</a>
                                                             </li>
                                                             <li>
-                                                                <a href="/delete-expense/{{$expense->id}}">Delete</a>
+                                                                <a href="/delete-expense/{{$expense->id}}">{{ trans('main.delete') }}</a>
                                                             </li>
                                                         </ul>
                                                     </div>

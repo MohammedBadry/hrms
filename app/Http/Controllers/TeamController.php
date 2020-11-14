@@ -14,14 +14,24 @@ class TeamController extends Controller
     public function addTeam()
     {
         $emps = User::get();
-        $managers = User::whereHas('role', function ($q) {
+        /*$managers = User::whereHas('role', function ($q) {
             $q->where('role_id', '16');
+        })->get();*/
+        $managers = User::whereIn('id', function ($q)
+        {
+          $q->select('user_id')->from('user_roles')
+          ->where('role_id', 16);
         })->get();
-
+        /*
         $leaders = User::whereHas('role', function ($q) {
             $q->where('role_id', '5');
+        })->get();*/
+        $leaders = User::whereIn('id', function ($q)
+        {
+          $q->select('user_id')->from('user_roles')
+          ->where('role_id', 5);
         })->get();
-
+  
         return view('hrms.team.add_team', compact('emps', 'managers', 'leaders'));
     }
 

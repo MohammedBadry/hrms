@@ -14,7 +14,8 @@ use App\Http\Requests\Request;
      {
          return [
              'emp_code' => 'required',
-             'emp_name' => 'required',
+             'emp_name_en' => 'required',
+             'emp_name_ar' => 'required',
              'role' => 'required',
              'doj' => 'required',
              'email' => 'email',

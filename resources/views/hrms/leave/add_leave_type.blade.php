@@ -14,12 +14,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Leave </a>
+                        <a href=""> {{ trans('main.leaves') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Edit {{$result->leave_type}} leave type</li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.edit') }} {{$result->leave_type}} {{ trans('main.leave_type') }}</li>
                 </ol>
             @else
             <ol class="breadcrumb">
@@ -29,12 +29,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Leave </a>
+                    <a href=""> {{ trans('main.leaves') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Add Leave Type </li>
+                <li class="breadcrumb-current-item"> {{ trans('main.add_leave_type') }} </li>
             </ol>
             @endif
         </div>
@@ -49,9 +49,9 @@
                     <div class="panel">
                         <div class="panel-heading">
                             @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-leave-type/{id}')
-                                <span class="panel-title hidden-xs"> Edit Leave Type </span>
+                                <span class="panel-title hidden-xs"> {{ trans('main.edit') }} {{ trans('main.leave_type') }} </span>
                                 @else
-                                <span class="panel-title hidden-xs"> Add Leave Type </span>
+                                <span class="panel-title hidden-xs"> {{ trans('main.add_leave_type') }} </span>
                                 @endif
                         </div>
 
@@ -68,23 +68,23 @@
                                     {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Leave Type </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.leave_type') }} </label>
                                             <div class="col-md-6">
                                                 @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-leave-type/{id}')
                                                     <input type="text" name="leave_type" id="input002" class="select2-single form-control" value="@if($result && $result->leave_type){{$result->leave_type}}@endif" required>
                                                 @else
-                                                    <input type="text" name="leave_type" id="input002" class="select2-single form-control" placeholder="Leave Type" required>
+                                                    <input type="text" name="leave_type" id="input002" class="select2-single form-control" placeholder="{{ trans('main.leave_type') }}" required>
                                                 @endif
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Description </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.description') }} </label>
                                             <div class="col-md-6">
                                                 @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-leave-type/{id}')
-                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="Leave Description" name="description" required>@if($result && $result->description){{$result->description}}@endif</textarea>
+                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="{{ trans('main.description') }}" name="description" required>@if($result && $result->description){{$result->description}}@endif</textarea>
                                                 @else
-                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="Leave Description" name="description" required></textarea>
+                                                    <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="{{ trans('main.description') }}" name="description" required></textarea>
                                                 @endif
                                             </div>
                                         </div>
@@ -94,11 +94,11 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                      <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                      <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
 
                                             </div>
                                             <div class="col-md-2"><a href="/add-leave-type" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                         </div>
                                         </div>
                                     {!! Form::close() !!}

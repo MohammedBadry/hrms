@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Employee extends Model
 {
+
+    public function getName()
+    {
+        return json_decode($this->name);
+    }
+
     public function userrole()
     {
         return $this->hasOne('App\Models\UserRole', 'user_id', 'id');

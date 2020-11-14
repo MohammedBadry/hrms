@@ -7,7 +7,7 @@
 
         <!-- -------------- Topbar -------------- -->
         <header id="topbar" class="alt">
-            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
 
                 <div class="topbar-left">
                     <ol class="breadcrumb">
@@ -77,7 +77,7 @@
                                         <label for="photo-upload"><h6 class="mb20 mt40"> {{ trans('main.photo') }} </h6></label>
                                         <label class="field prepend-icon append-button file">
                                             <span class="button">{{ trans('main.choose_file') }}</span>
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="hidden" value="edit-emp/{{$emps->id}}" id="url">
 
                                                 <input type="file" class="gui-file" name="photo" id="photo_upload"
@@ -106,7 +106,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40">{{ trans('main.code') }}</h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="emp_code" id="emp_code" class="gui-input"
                                                        value="@if($emps && $emps->employee->code){{$emps->employee->code}}@endif" required>
                                                 <label for="input002" class="field-icon">
@@ -124,11 +124,31 @@
 
 
                                     <div class="section">
-                                        <label for="input002"><h6 class="mb20 mt40">{{ trans('main.name') }} </h6></label>
+                                        <label for="input002"><h6 class="mb20 mt40">{{ trans('main.name_en') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
+                                                <input type="text" name="emp_name_en" id="emp_name_en" class="gui-input"
+                                                       value="@if($emps && $emps->employee->getName()->en){{$emps->employee->getName()->en}}@endif" required>
+                                                <label for="input002" class="field-icon">
+                                                    <i class="fa fa-user"></i>
+                                                </label>
+                                            @else
                                                 <input type="text" name="emp_name" id="emp_name" class="gui-input"
-                                                       value="@if($emps && $emps->employee->name){{$emps->employee->name}}@endif" required>
+                                                       placeholder="{{ trans('main.name') }}..." required>
+                                                <label for="input002" class="field-icon">
+                                                    <i class="fa fa-user"></i>
+                                                </label>
+                                            @endif
+                                        </label>
+                                    </div>
+
+
+                                    <div class="section">
+                                        <label for="input002"><h6 class="mb20 mt40">{{ trans('main.name_ar') }} </h6></label>
+                                        <label for="input002" class="field prepend-icon">
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
+                                                <input type="text" name="emp_name_ar" id="emp_name_ar" class="gui-input"
+                                                       value="@if($emps && $emps->employee->getName()->ar){{$emps->employee->getName()->ar}}@endif" required>
                                                 <label for="input002" class="field-icon">
                                                     <i class="fa fa-user"></i>
                                                 </label>
@@ -146,28 +166,33 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40">{{ trans('main.status') }} </h6></label>
                                         <div class="option-group field">
-                                            <label class="field option mb5">
-                                                @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
-                                                <input type="radio" name="emp_status" id="emp_status" value="1"
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
+                                                <label class="field option mb5">
+                                                    <input type="radio" name="emp_status" id="emp_status" value="1"
                                                        @if(isset($emps))@if($emps->employee->status == '1') checked @endif @endif>
-                                                <span class="radio"></span>{{ trans('main.present') }}</label>
-                                            <label class="field option mb5">
-                                                <input type="radio" name="emp_status" id="emp_status" value="0"
+                                                    <span class="radio"></span>{{ trans('main.present') }}
+                                                </label>
+                                                <label class="field option mb5">
+                                                    <input type="radio" name="emp_status" id="emp_status" value="0"
                                                        @if(isset($emps))@if($emps->employee->status == '0') checked @endif @endif>
-                                                <span class="radio"></span>{{ trans('main.ex') }}</label>
+                                                    <span class="radio"></span>{{ trans('main.ex') }}
+                                                </label>
                                             @else
-                                                <input type="radio" name="emp_status" id="emp_status" value="1">
-                                                <span class="radio"></span>{{ trans('main.present') }}</label>
+                                                <label class="field option mb5">
+                                                    <input type="radio" name="emp_status" id="emp_status" value="1">
+                                                    <span class="radio"></span>{{ trans('main.present') }}
+                                                </label>
                                                 <label class="field option mb5">
                                                     <input type="radio" name="emp_status" id="emp_status" value="0" checked>
-                                                    <span class="radio"></span>{{ trans('main.ex') }}</label>
+                                                    <span class="radio"></span>{{ trans('main.ex') }}
+                                                </label>
                                             @endif
                                         </div>
                                     </div>
 
                                         <div class="section">
                                             <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.role') }} </h6></label>
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <select class="select2-single form-control" name="role" id="role" readonly required>
                                                     <option value="">{{ trans('main.select') }} {{ trans('main.role') }}</option>
                                                     @foreach($roles as $role)
@@ -207,7 +232,7 @@
                                             {{ trans('main.birth_date') }} </h6></label>
 
                                         <div class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" id="datepicker1" class="gui-input fs13" name="dob"
                                                        value="@if($emps && $emps->employee->date_of_birth){{$emps->employee->date_of_birth}}@endif" required>
                                                 <label class="field-icon">
@@ -228,7 +253,7 @@
                                             {{ trans('main.join_date') }} </h6></label>
 
                                         <div class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" id="datepicker4" class="gui-input fs13" name="doj"
                                                        value="@if($emps && $emps->employee->date_of_joining){{$emps->employee->date_of_joining}}@endif" required>
                                                 <label class="field-icon">
@@ -247,7 +272,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.mobile_number') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="number" name="mob_number" id="mobile_phone"
                                                        class="gui-input phone-group" maxlength="10" minlength="10" required
                                                        value="@if($emps && $emps->employee->number){{$emps->employee->number}}@endif">
@@ -268,7 +293,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.qualification') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
 
                                                 {!! Form::select('qualification_list', qualification(),$emps->employee->qualification, ['class' => 'select2-single form-control qualification_select', 'id' => 'qualification']) !!}
                                                 <input type="text" id="qualification" class="gui-input form-control hidden qualification_text" placeholder="{{ trans('main.qualification') }}" value="{{$emps->employee->qualification}}"/>
@@ -284,7 +309,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.emergency_number') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="number" name="emer_number" id="emergency_number"
                                                        class="gui-input phone-group" maxlength="10" minlength="10"
                                                        value="@if($emps && $emps->employee->emergency_number){{$emps->employee->emergency_number}}@endif">
@@ -305,7 +330,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.father_name') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="father_name" id="father_name" class="gui-input"
                                                        value="@if($emps && $emps->employee->father_name){{$emps->employee->father_name}}@endif">
 
@@ -321,7 +346,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.current_address') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="address" id="address" class="gui-input"
                                                        value="@if($emps && $emps->employee->current_address){{$emps->employee->current_address}}@endif">
                                                 <label for="input002" class="field-icon">
@@ -341,7 +366,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.permanent_address') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="permanent_address" id="permanent_address"
                                                        class="gui-input"
                                                        value="@if($emps && $emps->employee->permanent_address){{$emps->employee->permanent_address}}@endif">
@@ -403,7 +428,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.probation_period') }} </h6></label>
 
-                                                @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                                @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                             <select class="select2-single form-control probation_select" name="prob_period" id="probation_period" >
                                                 <option value="">{{ trans('main.select') }} {{ trans('main.probation_period') }}</option>
                                                     @if($emps->employee->probation_period == '0')
@@ -451,7 +476,7 @@
                                             {{ trans('main.confirmation_date') }} </h6></label>
 
                                         <div class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" id="datepicker5" class="gui-input fs13" name="doc"
                                                        value="@if($emps && $emps->employee->date_of_confirmation){{$emps->employee->date_of_confirmation}}@endif"/>
                                                 <label class="field-icon">
@@ -471,7 +496,7 @@
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.department') }} </h6></label>
                                             <select class="select2-single form-control" name="department" id="department">
                                                 <option value="">{{ trans('main.select') }} </option>
-                                                @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                                @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                     @if($emps->employee->department == 'Marketplace')
                                                         <option value="Marketplace" selected>{{ trans('main.marketplace') }}</option>
                                                         <option value="Social Media">{{ trans('main.social_media') }}</option>
@@ -498,7 +523,7 @@
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.salary_on_confirmation') }} </h6>
                                         </label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="salary" id="salary" class="gui-input"
                                                        value="@if($emps && $emps->employee->salary){{$emps->employee->salary}}@endif" readonly>
                                                 <label for="input002" class="field-icon">
@@ -530,7 +555,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.bank_account_number') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="account_number" id="bank_account_number"
                                                        class="gui-input"
                                                        value="@if($emps && $emps->employee->account_number){{$emps->employee->account_number}}@endif">
@@ -551,7 +576,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.bank_name') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="bank_name" id="bank_name" class="gui-input"
                                                        value="@if($emps && $emps->employee->bank_name){{$emps->employee->bank_name}}@endif">
                                                 <label for="input002" class="field-icon">
@@ -571,7 +596,7 @@
                                     <div class="section">
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.iban_number') }} </h6></label>
                                         <label for="input002" class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" name="ifsc_code" id="ifsc_code" class="gui-input"
                                                        value="@if($emps && $emps->employee->ifsc_code){{$emps->employee->ifsc_code}}@endif">
                                                 <label for="input002" class="field-icon">
@@ -601,7 +626,7 @@
                                             {{ trans('main.resignation_date') }} </h6></label>
 
                                         <div class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" id="datepicker6" class="gui-input fs13" name="dor"
                                                        value="@if($emps && $emps->employee->date_of_resignation){{$emps->employee->date_of_resignation}}@endif"/>
                                                 <label class="field-icon">
@@ -621,7 +646,7 @@
                                         <label for="input002"><h6 class="mb20 mt40"> {{ trans('main.notice_period') }} </h6></label>
                                             <select class="select2-single form-control" name="notice_period" id="notice_period">
                                                 <option value="">{{ trans('main.select') }}</option>
-                                                @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                                @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                     @if($emps->employee->notice_period == '1')
                                                         <option value="1" selected>1 {{ trans('main.month') }}</option>
                                                         <option value="2">2 {{ trans('main.months') }}</option>
@@ -642,7 +667,7 @@
                                             {{ trans('main.last_working_days') }} </h6></label>
 
                                         <div class="field prepend-icon">
-                                            @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-emp/{id}')
+                                            @if(\Route::getFacadeRoot()->current()->uri() == $currentLocale.'/edit-emp/{id}')
                                                 <input type="text" id="datepicker7" class="gui-input fs13"
                                                        name="last_working_day"
                                                        value="@if($emps && $emps->employee->last_working_day){{$emps->employee->last_working_day}} @endif"/>

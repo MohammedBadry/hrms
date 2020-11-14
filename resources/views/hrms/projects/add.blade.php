@@ -12,12 +12,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Client </a>
+                        <a href=""> {{ trans('main.projects') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Add Client</li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.add_project') }} </li>
                 </ol>
             </div>
         </header>
@@ -30,7 +30,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Add Project </span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.add_project') }} </span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -44,38 +44,54 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Project </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.project_name_en') }} </label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="name" id="input002"
-                                                           class="select2-single form-control" placeholder="Name"
+                                                    <input type="text" name="name_en" id="input002"
+                                                           class="select2-single form-control" placeholder="{{ trans('main.project_name_en') }}"
                                                            required>
                                                 </div>
                                             </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Description </label>
-                                                    <div class="col-md-6">
-                                                        <textarea class="form-control" name="description"></textarea>
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.project_name_ar') }} </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="name_ar" id="input002"
+                                                           class="select2-single form-control" placeholder="{{ trans('main.project_name_ar') }}"
+                                                           required>
                                                 </div>
-
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Project Code </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="code" id="input002"
-                                                               class="select2-single form-control" placeholder="Project Code"
-                                                               required>
-                                                    </div>
-                                                </div>
+                                            </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Client </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.project_description_en') }} </label>
+                                                <div class="col-md-6">
+                                                    <textarea class="form-control" name="description_en"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.project_description_ar') }} </label>
+                                                <div class="col-md-6">
+                                                    <textarea class="form-control" name="description_ar"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.code') }} </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="code" id="input002"
+                                                            class="select2-single form-control" placeholder="{{ trans('main.code') }}"
+                                                            required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.client') }} </label>
                                                 <div class="col-md-6">
                                                     <select class="selectpicker form-control" data-done-button="true"
                                                             name="client_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{ trans('main.select') }}</option>
                                                         @foreach($model->clients as $client)
-                                                            <option value="{{$client->id}}">{{$client->name}}</option>
+                                                            <option value="{{$client->id}}">{{ $client->getName()->$currentLocale }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -86,12 +102,12 @@
                                                 <div class="col-md-2">
 
                                                     <input type="submit" class="btn btn-bordered btn-info btn-block"
-                                                           value="Save">
+                                                           value="{{ trans('main.submit') }}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-project">
                                                         <input type="button"
                                                                class="btn btn-bordered btn-success btn-block"
-                                                               value="Reset"></a>
+                                                               value="{{ trans('main.reset') }}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

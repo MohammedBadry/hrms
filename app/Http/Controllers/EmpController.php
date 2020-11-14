@@ -48,9 +48,11 @@ class EmpController extends Controller
         $user->password = bcrypt('123456');
         $user->save();
 
+        $emp_name                 = json_encode(['en' => $request->emp_name_en, 'ar' => $request->emp_name_ar], JSON_UNESCAPED_UNICODE);
+
         $emp                       = new Employee;
         $emp->photo                = $filename;
-        $emp->name                 = $request->emp_name;
+        $emp->name                 = $emp_name;
         $emp->code                 = $request->emp_code;
         $emp->status               = $request->emp_status;
         $emp->gender               = $request->gender;
@@ -127,7 +129,7 @@ class EmpController extends Controller
         }
 
         $photo             = $request->$filename;
-        $emp_name          = $request->name;
+        $emp_name          = json_encode(['en' => $request->emp_name_en, 'ar' => $request->emp_name_ar], JSON_UNESCAPED_UNICODE);
         $emp_code          = $request->code;
         $emp_status        = $request->status;
         $gender            = $request->gender;

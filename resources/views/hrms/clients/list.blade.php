@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Clients </a>
+                        <a href=""> {{ trans('main.clients') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Client Listings </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.list_client') }} </li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Client Lists </span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.list_client') }} </span>
                                 </div>
                                 <div class="panel-body pn">
                                     @if(Session::has('flash_message'))
@@ -49,12 +49,12 @@
                                         <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                             <thead>
                                             <tr class="bg-light">
-                                                <th class="text-center">Id</th>
-                                                <th class="text-center">Name</th>
-                                                <th class="text-center">Address</th>
-                                                <th class="text-center">Company</th>
-                                                <th class="text-center">Code</th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">{{ trans('main.id') }}</th>
+                                                <th class="text-center">{{ trans('main.name') }}</th>
+                                                <th class="text-center">{{ trans('main.address') }}</th>
+                                                <th class="text-center">{{ trans('main.company') }}</th>
+                                                <th class="text-center">{{ trans('main.code') }}</th>
+                                                <th class="text-center">{{ trans('main.actions') }}</th>
                                             </tr>
                                             </thead>
 
@@ -62,23 +62,29 @@
                                             @foreach($clients as $client)
                                                 <tr>
                                                     <td class="text-center">{{$client->id}}</td>
-                                                    <td class="text-center">{{$client->name}}</td>
-                                                    <td class="text-center">{{$client->address}}</td>
-                                                    <td class="text-center">{{$client->company}}</td>
+                                                    <td class="text-center">
+                                                        {{ $client->getName()->$currentLocale }}
+                                                    </td>
+                                                    <td class="text-center">
+                                                        {{ $client->getAddress()->$currentLocale }}
+                                                    </td>
+                                                    <td class="text-center">
+                                                        {{ $client->getCompany()->$currentLocale }}
+                                                    </td>
                                                     <td class="text-center">{{$client->code}}</td>
                                                     <td class="text-center">
                                                         <div class="btn-group text-right">
                                                             <button type="button"
                                                                     class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                    data-toggle="dropdown" aria-expanded="false"> Action
+                                                                    data-toggle="dropdown" aria-expanded="false"> {{ trans('main.action') }}
                                                                 <span class="caret ml5"></span>
                                                             </button>
                                                             <ul class="dropdown-menu" role="menu">
                                                                 <li>
-                                                                    <a href="/edit-client/{{$client->id}}">Edit</a>
+                                                                    <a href="/edit-client/{{$client->id}}">{{ trans('main.edit') }}</a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="/delete-list/{{$client->id}}">Delete</a>
+                                                                    <a href="/delete-list/{{$client->id}}">{{ trans('main.delete') }}</a>
                                                                 </li>
                                                             </ul>
                                                         </div>

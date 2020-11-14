@@ -16,12 +16,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Assets </a>
+                        <a href=""> {{ trans('main.assets') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Edit {{$result->name}} </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.edit') }} {{$result->name}} </li>
                 </ol>
 
             @else
@@ -32,12 +32,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Assets </a>
+                    <a href=""> {{ trans('main.assets') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Add Asset </li>
+                <li class="breadcrumb-current-item"> {{ trans('main.add_asset') }} </li>
             </ol>
             @endif
         </div>
@@ -52,9 +52,9 @@
                     <div class="panel">
                         <div class="panel-heading">
                             @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-asset/{id}')
-                                  <span class="panel-title hidden-xs"> Edit Asset </span>
+                                  <span class="panel-title hidden-xs"> {{ trans('main.edit') }} {{ trans('main.asset') }} </span>
                                 @else
-                                  <span class="panel-title hidden-xs"> Add Asset </span>
+                                  <span class="panel-title hidden-xs"> {{ trans('main.add_asset') }} </span>
                              @endif
                         </div>
 
@@ -71,24 +71,24 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Asset </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.asset') }} </label>
                                             <div class="col-md-6">
                                                 @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-asset/{id}')
                                                     <input type="text" name="name" id="input002" class="select2-single form-control" value="@if($result && $result->name){{$result->name}}@endif" required>
                                                 @else
-                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Asset" required>
+                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="{{ trans('main.asset') }}" required>
                                                 @endif
                                             </div>
                                         </div>
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Description </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.description') }} </label>
                                             <div class="col-md-6">
                                                     @if(\Route::getFacadeRoot()->current()->uri() == LaravelLocalization::getCurrentLocale().'/edit-asset/{id}')
                                                         <textarea class="select2-single form-control" rows="3" id="textarea1" name="description" required>@if($result && $result->description){{$result->description}}@endif </textarea>
                                                     @else
-                                                        <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="Asset Description" name="description" required></textarea>
+                                                        <textarea class="select2-single form-control" rows="3" id="textarea1" placeholder="{{ trans('main.description') }}" name="description" required></textarea>
                                                     @endif
                                             </div>
                                         </div>
@@ -98,11 +98,11 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
 
                                             </div>
                                             <div class="col-md-2"><a href="/add-asset" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                         </div>
                                         </div>
                                         {!! Form::close() !!}

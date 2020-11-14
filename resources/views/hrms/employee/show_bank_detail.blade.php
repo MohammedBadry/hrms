@@ -16,7 +16,7 @@
                         <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> {{ trans('main.employee') }} </a>
+                        <a href=""> {{ trans('main.employees') }} </a>
                     </li>
                     <li class="breadcrumb-current-item"> {{ trans('main.bank_details') }} </li>
                 </ol>
@@ -77,7 +77,7 @@
                                                                 "{{$emp->account_number}}",
                                                                 "{{$emp->ifsc_code}}",
                                                                 "{{$emp->pf_account_number}}"
-                                                                ]'> Edit
+                                                                ]'> {{ trans('main.edit') }}
                                                         </button>
                                                     </div>
                                                 </td>
@@ -109,32 +109,32 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">{{ trnans('main.modal_header') }}</h4>
+                    <h4 class="modal-title">{{ trans('main.modal_header') }}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="employee_name">{{ trnans('main.name') }}</label>
+                        <label for="employee_name">{{ trans('main.name') }}</label>
                         <input type="text" id="employee_name" class="form-control" readonly>
                     </div>
 
                     <div class="form-group">
-                        <label for="bank_name">{{ trnans('main.bank_name') }}</label>
+                        <label for="bank_name">{{ trans('main.bank_name') }}</label>
                         <input type="text" id="bank_name" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="account_number">{{ trnans('main.account_number') }}</label>
+                        <label for="account_number">{{ trans('main.account_number') }}</label>
                         <input type="text" id="account_number" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="ifsc_code">{{ trnans('main.iban_number') }}</label>
+                        <label for="ifsc_code">{{ trans('main.iban_number') }}</label>
                         <input type="text" id="ifsc_code" class="form-control">
                     </div>
                     <input type="hidden" id="emp_id" class="form-control">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-custom" id="update-bank-account-details">{{ trnans('main.update') }}</button>
+                    <button type="button" class="btn btn-custom" id="update-bank-account-details">{{ trans('main.update') }}</button>
                 </div>
             </div>
 

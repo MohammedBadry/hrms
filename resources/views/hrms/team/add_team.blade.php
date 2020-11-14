@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Teams </a>
+                    <a href=""> {{ trans('main.teams') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Add Team </li>
+                <li class="breadcrumb-current-item"> {{ trans('main.add_team') }} </li>
             </ol>
         </div>
     </header>
@@ -31,7 +31,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title hidden-xs"> Add Team </span>
+                                <span class="panel-title hidden-xs"> {{ trans('main.add_team') }} </span>
                             </div>
 
                             <div class="panel-body pn">
@@ -46,20 +46,20 @@
                                         {{--<form class="form-horizontal" role="form">--}}
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Team Name </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.team_name') }} </label>
                                                 <div class="col-md-6">
-                                                    <input type="text" placeholder="name of team..." name="team_name"
+                                                    <input type="text" placeholder="{{ trans('main.team_name') }}..." name="team_name"
                                                            id="input002" class="select2-single form-control" required>
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Team Manager</label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.team_manager') }}</label>
                                                 <div class="col-md-6">
                                                     <select class="selectpicker form-control" data-done-button="true"
                                                              name="manager_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{ trans('main.select') }}</option>
                                                         @foreach($managers as $manager)
                                                             <option value="{{$manager->id}}">{{$manager->name}}</option>
                                                         @endforeach
@@ -68,10 +68,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Team Leader</label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.team_leader') }}</label>
                                                 <div class="col-md-6">
                                                     <select class="selectpicker form-control" data-done-button="true" name="leader_id" required>
-                                                        <option value="" selected>Select One</option>
+                                                        <option value="" selected>{{ trans('main.select') }}</option>
                                                         @foreach($leaders as $leader)
                                                             <option value="{{$leader->id}}">{{$leader->name}}</option>
                                                         @endforeach
@@ -80,11 +80,12 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="multiselect2" class="col-md-3 control-label"> Select Team Members </label>
+                                                <label for="multiselect2" class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.team_members') }} </label>
                                                 <div class="col-md-6">
                                                     <select id="done" class="selectpicker form-control" multiple data-done-button="true"
                                                       name="member_id[]" required>
-                                                        @foreach($emps as $emp)
+                                                      <option value="" selected>{{ trans('main.select') }}</option>
+                                                      @foreach($emps as $emp)
                                                             <option value="{{$emp->id}}">{{$emp->name}}</option>
                                                         @endforeach
                                                     </select>
@@ -95,10 +96,10 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
-                                                        <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                        <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-team" >
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                             </div>
                                         {!! Form::close() !!}
                                         {{--</form>--}}

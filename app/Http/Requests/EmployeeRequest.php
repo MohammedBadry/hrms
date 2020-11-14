@@ -26,7 +26,8 @@ class EmployeeRequest extends Request
         return [
             'full_final' => 'required',
             'emp_code' => 'required',
-            'emp_name' => 'required',
+            'emp_name_en' => 'required',
+            'emp_name_ar' => 'required',
             'emp_status' => 'required',
             'mob_number' => 'required|digits:10|',
             'doj' => 'date',

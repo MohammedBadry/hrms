@@ -23,8 +23,23 @@ class ProjectController extends Controller
 
     public function saveProject(Requests\AddProjectRequest $request)
     {
+        $name = json_encode([
+            'ar' => $request->name_ar,
+            'en' => $request->name_en
+        ], JSON_UNESCAPED_UNICODE);
+        $description = json_encode([
+            'ar' => $request->description_ar,
+            'en' => $request->description_en
+        ], JSON_UNESCAPED_UNICODE);
+        $data = [
+            'name' => $name,
+            'description' =>$description,
+            'code' =>$request->code,
+            'client_id' =>$request->client_id,
+        ];
         $project = new Project();
-        $project->fill(array_except($request->all(), '_token'));
+        //$project->fill(array_except($request->all(), '_token'));
+        $project->fill($data);
         $project->save();
 
         \Session::flash('flash_message', 'Project added successfully');
@@ -34,10 +49,10 @@ class ProjectController extends Controller
 
     public function showEdit($projectId)
     {
-        $model = new \stdClass();
-        $model->project = Project::with('client')->findOrFail(['id' => $projectId]);
-        $model->clients = Client::get();
-        return view('hrms.projects.edit', compact('model'));
+
+        $project = Project::with('client')->where('id', $projectId)->first();
+        $clients = Client::get();
+        return view('hrms.projects.edit', compact('project', 'clients'));
     }
 
     public function listProject()
@@ -83,19 +98,21 @@ class ProjectController extends Controller
         return redirect()->back();
     }
 
-    public function doEdit(Request $request, $id)
+    public function saveProjectEdit(Request $request, $id)
     {
-        $name = $request->name;
-        $description = $request->description;
+        $name = json_encode([
+            'ar' => $request->name_ar,
+            'en' => $request->name_en
+        ], JSON_UNESCAPED_UNICODE);
+        $description = json_encode([
+            'ar' => $request->description_ar,
+            'en' => $request->description_en
+        ], JSON_UNESCAPED_UNICODE);
 
         $edit = project::findOrFail($id);
-        if (!empty($name)) {
-            $edit->name = $name;
-        }
-        if (!empty($description)) {
-            $edit->description = $description;
-        }
-            $edit->save();
+        $edit->name = $name;
+        $edit->description = $description;
+        $edit->save();
         \Session::flash('flash_message', 'project successfully updated!');
         return redirect('list-project');
     }

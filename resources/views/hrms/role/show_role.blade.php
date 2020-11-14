@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Roles </a>
+                    <a href=""> {{ trans('main.roles') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> Role Listings </li>
+                <li class="breadcrumb-current-item"> {{ trans('main.role_listings') }} </li>
             </ol>
         </div>
     </header>
@@ -36,7 +36,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> Role Lists </span>
+                            <span class="panel-title hidden-xs"> {{ trans('main.role_listings') }} </span>
                         </div>
                         <div class="panel-body pn">
                             @if(Session::has('flash_message'))
@@ -49,10 +49,10 @@
                                 <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                     <thead>
                                     <tr class="bg-light">
-                                    <th class="text-center">Id</th>
-                                    <th class="text-center">Role</th>
-                                    <th class="text-center">Description</th>
-                                    <th class="text-center">Actions</th>
+                                    <th class="text-center">{{ trans('main.id') }}</th>
+                                    <th class="text-center">{{ trans('main.role') }}</th>
+                                    <th class="text-center">{{ trans('main.description') }}</th>
+                                    <th class="text-center">{{ trans('main.actions') }}</th>
                                     </tr>
                                    </thead>
 
@@ -67,15 +67,15 @@
                                         <div class="btn-group text-right">
                                             <button type="button"
                                                     class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                    data-toggle="dropdown" aria-expanded="false"> Action
+                                                    data-toggle="dropdown" aria-expanded="false"> {{ trans('main.actions') }}
                                                 <span class="caret ml5"></span>
                                             </button>
                                             <ul class="dropdown-menu" role="menu">
                                                 <li>
-                                                    <a href="/edit-role/{{$role->id}}">Edit</a>
+                                                    <a href="/edit-role/{{$role->id}}">{{ trans('main.edit') }}</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/delete-role/{{$role->id}}">Delete</a>
+                                                    <a href="/delete-role/{{$role->id}}">{{ trans('main.delete') }}</a>
                                                 </li>
                                             </ul>
                                         </div>

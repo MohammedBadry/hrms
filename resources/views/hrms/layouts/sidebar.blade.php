@@ -88,14 +88,13 @@
             </ul>
         </li>
 
-        <li>
-
+        <!--li>
             <a href="/bank-account-details">
                 <span class="fa fa-bank"></span>
                 <span class="sidebar-title">{{ trans('main.bank_account') }}</span>
 
             </a>
-        </li>
+        </li-->
 
         <li>
             <a class="accordion-toggle" href="/dashboard">
@@ -203,7 +202,7 @@
             <ul class="nav sub-nav">
                 <li>
                     <a href="/promotion">
-                        <span class="glyphicon glyphicon-book"></span> {{ trans('main.promote') }} </a>
+                        <span class="glyphicon glyphicon-book"></span> {{ trans('main.add_promote') }} </a>
                 </li>
                 <li>
                     <a href="/show-promotion">

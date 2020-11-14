@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Client </a>
+                        <a href=""> {{ trans('main.client') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Add Client</li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.add_client') }}</li>
                 </ol>
             </div>
         </header>
@@ -31,7 +31,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Add Client </span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.add_client') }} </span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -45,41 +45,62 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Client </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.name_en') }}</label>
                                                 <div class="col-md-6">
-                                                    <input type="text" name="name" id="input002" class="select2-single form-control" placeholder="Name" required>
+                                                    <input type="text" name="name_en" id="input002" class="select2-single form-control" placeholder="{{ trans('main.name_en') }}" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Address </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.name_ar') }}</label>
                                                 <div class="col-md-6">
-                                                    <textarea class="select2-single form-control" rows="3" id="address" placeholder="Client Address" name="address"></textarea>
+                                                    <input type="text" name="name_ar" id="input002" class="select2-single form-control" placeholder="{{ trans('main.name_ar') }}" required>
                                                 </div>
                                             </div>
 
-                                                <div class="form-group">
-                                                    <label class="col-md-3 control-label"> Company </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="company" id="input002" class="select2-single form-control" placeholder="Company">
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.address_en') }} </label>
+                                                <div class="col-md-6">
+                                                    <textarea class="select2-single form-control" rows="3" id="address_en" placeholder="{{ trans('main.address_en') }}" name="address_en"></textarea>
                                                 </div>
+                                            </div>
 
-                                                <div class="form-group code-group">
-                                                    <label class="col-md-3 control-label"> Code </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" name="code" id="code" class="select2-single form-control" placeholder="Unique Code" required>
-                                                    </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.address_ar') }}</label>
+                                                <div class="col-md-6">
+                                                    <textarea class="select2-single form-control" rows="3" id="address_ar" placeholder="{{ trans('main.address_ar') }}" name="address_ar"></textarea>
                                                 </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.company_en') }}</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="company_en" id="input002" class="select2-single form-control" placeholder="{{ trans('main.company_en') }}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.company_ar') }}</label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="company_ar" id="input002" class="select2-single form-control" placeholder="{{ trans('main.company_ar') }}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group code-group">
+                                                <label class="col-md-3 control-label"> {{ trans('main.code') }} </label>
+                                                <div class="col-md-6">
+                                                    <input type="text" name="code" id="code" class="select2-single form-control" placeholder="{{ trans('main.code') }}" required>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" disabled="disabled" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" disabled="disabled" value="{{ trans('main.submit') }}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-client">
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a>
                                                 </div>
                                             </div>
                                             {!! Form::close() !!}

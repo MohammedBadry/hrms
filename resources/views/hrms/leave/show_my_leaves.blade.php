@@ -13,12 +13,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Leaves </a>
+                    <a href=""> {{ trans('main.leaves') }} </a>
                 </li>
-                <li class="breadcrumb-current-item"> My Leave List</li>
+                <li class="breadcrumb-current-item"> {{ trans('main.my_leave_list') }}</li>
             </ol>
         </div>
     </header>
@@ -36,7 +36,7 @@
                     <div class="box box-success">
                     <div class="panel">
                         <div class="panel-heading">
-                            <span class="panel-title hidden-xs"> My Leave Lists </span>
+                            <span class="panel-title hidden-xs"> {{ trans('main.my_leave_list') }} </span>
                         </div>
                         <div class="panel-body pn">
                             @if(Session::has('flash_message'))
@@ -49,13 +49,13 @@
                                 <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                     <thead>
                                     <tr class="bg-light">
-                                        <th class="text-center">Id</th>
-                                        <th class="text-center">Leave Type</th>
-                                        <th class="text-center">Date From</th>
-                                        <th class="text-center">Date To</th>
-                                        <th class="text-center">Days</th>
-                                        <th class="text-center">Remarks</th>
-                                        <th class="text-center">Status</th>
+                                        <th class="text-center">{{ trans('main.id') }}</th>
+                                        <th class="text-center">{{ trans('main.leave_type') }}</th>
+                                        <th class="text-center">{{ trans('main.date_from') }}</th>
+                                        <th class="text-center">{{ trans('main.date_to') }}</th>
+                                        <th class="text-center">{{ trans('main.days') }}</th>
+                                        <th class="text-center">{{ trans('main.remarks') }}</th>
+                                        <th class="text-center">{{ trans('main.status') }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -73,19 +73,19 @@
                                                     @if($leave->status==0)
                                                         <button type="button"
                                                                 class="btn btn-info br2 btn-xs fs12"
-                                                                aria-expanded="false"> <i class="fa fa-external-link"> Pending </i>
+                                                                aria-expanded="false"> <i class="fa fa-external-link"> {{ trans('main.pending') }} </i>
 
                                                         </button>
                                                     @elseif($leave->status==1)
                                                         <button type="button"
                                                                 class="btn btn-success br2 btn-xs fs12"
-                                                                aria-expanded="false"> <i class="fa fa-check"> Approved </i>
+                                                                aria-expanded="false"> <i class="fa fa-check"> {{ trans('main.approved') }} </i>
 
                                                         </button>
                                                     @else
                                                         <button type="button"
                                                                 class="btn btn-danger br2 btn-xs fs12"
-                                                                aria-expanded="false"> <i class="fa fa-times"> Disapproved </i>
+                                                                aria-expanded="false"> <i class="fa fa-times"> {{ trans('main.disapproved') }} </i>
 
                                                         </button>
                                                     @endif

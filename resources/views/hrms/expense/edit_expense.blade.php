@@ -14,12 +14,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Expenses </a>
+                            <a href=""> {{ trans('main.expenses') }} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Edit Expenses </li>
+                        <li class="breadcrumb-current-item"> {{ trans('main.edit') }} {{ trans('main.expenses') }} </li>
                     </ol>
             </div>
         </header>
@@ -32,7 +32,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Edit Expenses </span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.edit') }} {{ trans('main.expenses') }} </span>
                             </div>
 
                             <div class="panel-body pn">
@@ -46,7 +46,7 @@
                                         {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Employee </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.employee') }} </label>
                                             <div class="col-md-6">
                                                 <select class="select2-multiple form-control select-primary"
                                                         name="emp_id" required>
@@ -62,21 +62,21 @@
                                         </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Item </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.item_bought') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="item" id="input002" class=" form-control" value="@if($expenses){{$expenses->item}}@endif" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Purchase From</label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.item_bought_from') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="purchase_from" id="input002" class=" form-control" value="@if($expenses){{$expenses->purchase_from}}@endif" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="datepicker1" class="col-md-3 control-label"> Date of Purchase </label>
+                                                <label for="datepicker1" class="col-md-3 control-label"> {{ trans('main.purchase_date') }} </label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <div class="input-group-addon">
@@ -89,7 +89,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Amount </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.amount') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="amount" id="input002" class=" form-control" value="@if($expenses){{$expenses->amount}}@endif" required>
                                                 </div>
@@ -100,11 +100,11 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
 
                                             </div>
                                             <div class="col-md-2"><a href="/edit-expense/{id}" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                         </div>
 
                                         {!! Form::close() !!}

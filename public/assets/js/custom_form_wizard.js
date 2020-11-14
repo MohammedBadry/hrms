@@ -39,7 +39,8 @@
             },
             onFinished: function(event, currentIndex) {
                 event.preventDefault();
-                var emp_name = $('#emp_name').val();
+                var emp_name_en = $('#emp_name_en').val();
+                var emp_name_ar = $('#emp_name_ar').val();
                 var emp_code = $('#emp_code').val();
                 var emp_status = $('#emp_status').val();
                 var role = $('#role').val();
@@ -87,7 +88,8 @@
                 if(photo.value != '') {
                     formData.append('photo', photo.files[0], photo.value);
                 }
-                formData.append('emp_name', emp_name);
+                formData.append('emp_name_en', emp_name_en);
+                formData.append('emp_name_ar', emp_name_ar);
                 formData.append('emp_code', emp_code);
                 formData.append('emp_status', emp_status);
                 formData.append('role', role);
