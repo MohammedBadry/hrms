@@ -13,15 +13,15 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard"> Dashboard </a>
+                    <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                 </li>
 
-                <li class="breadcrumb-current-item"> Add Holiday</li>
+                <li class="breadcrumb-current-item"> {{ trans('main.add_holiday') }}</li>
             </ol>
         </div>
         <div class="topbar-right">
             <h4><a class="link-unstyled" href="/sample_sheet/Holiday_sample_sheet.xlsx" title="">
-                    <i class="fa fa-cloud-download text-purple pr10"></i> Sample Sheet </a></h4>
+                    <i class="fa fa-cloud-download text-purple pr10"></i> {{ trans('main.sample_sheet') }} </a></h4>
         </div>
     </header>
     <!-- -------------- Content -------------- -->
@@ -36,17 +36,17 @@
 
                     <ul class="nav list-unstyled" role="tablist">
 
-                        <li class="nav-label">General</li>
+                        <li class="nav-label">{{ trans('main.general') }}</li>
                         <li>
                             <a class="btn btn-primary btn-gradient btn-alt btn-block item-active br-n" href="#login"
                                role="tab"
-                               data-toggle="tab"> Upload Holiday Sheet </a>
+                               data-toggle="tab"> {{ trans('main.upload_holiday_sheet') }} </a>
                         </li>
 
                         <li>
                             <a class="btn btn-danger btn-gradient btn-alt btn-block br-n" href="#register"
                                role="tab"
-                               data-toggle="tab"> See Uploaded Sheets </a>
+                               data-toggle="tab"> {{ trans('main.see_holiday_sheets') }} </a>
                         </li>
                     </ul>
                 </div>
@@ -77,26 +77,26 @@
                                 <!-- -------------- /section -------------- -->
 
                                 <div class="section">
-                                    <label for="username" class="field prepend-icon"> <h6 > Description </h6> </label>
+                                    <label for="username" class="field prepend-icon"> <h6 > {{ trans('main.description') }} </h6> </label>
                                     <input type="text" class="gui-input" name="description"
-                                           placeholder="Description" required>
+                                           placeholder="{{ trans('main.description') }}" required>
                                 </div>
 
                                 <div class="section">
                                     <div class="input-group">
-                                        <label for="date" class="field prepend-icon "> <h6> Select Date </h6></label>
+                                        <label for="date" class="field prepend-icon "> <h6> {{ trans('main.select_date') }} </h6></label>
                                         <input type="text" id="datepicker1" class="gui-input fs13 select2-single form-control" name="date" required>
                                     </div>
                                 </div>
 
                                 <div class="section">
-                                    <label for="file1"><h6 > Upload File </h6></label>
+                                    <label for="file1"><h6 > {{ trans('main.upload_file') }} </h6></label>
                                     <label class="field prepend-icon append-button file">
-                                        <span class="button">Choose File</span>
+                                        <span class="button">{{ trans('main.choose_file') }}</span>
                                         <input type="file" class="gui-file" name="upload_file" id="file1"
                                                onChange="document.getElementById('uploader1').value = this.value;">
                                         <input type="text" class="gui-input" id="uploader1"
-                                               placeholder="Select File" required>
+                                               placeholder="{{ trans('main.select') }}" required>
                                     </label>
                                 </div>
 
@@ -123,7 +123,7 @@
                         <div class="panel">
                             <div class="panel-heading">
                                     <span class="panel-title">
-                                      Uploaded Files
+                                        {{ trans('main.uploaded_files') }}
                                     </span>
                             </div>
 
@@ -133,10 +133,10 @@
                                     <table class="table table-bordered table-hover">
                                         <thead>
                                         <tr class="bg-light">
-                                            <th class="text-center">Id</th>
-                                            <th class="text-center">Name</th>
-                                            <th class="text-center">Description</th>
-                                            <th class="text-center">Date</th>
+                                            <th class="text-center">{{ trans('main.id') }}</th>
+                                            <th class="text-center">{{ trans('main.name') }}</th>
+                                            <th class="text-center">{{ trans('main.description') }}</th>
+                                            <th class="text-center">{{ trans('main.date') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

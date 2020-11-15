@@ -14,12 +14,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Awards </a>
+                            <a href=""> {{ trans('main.awards') }} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Assign Awards </li>
+                        <li class="breadcrumb-current-item"> {{ trans('main.assign_award') }} </li>
                     </ol>
             </div>
         </header>
@@ -32,7 +32,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Assign Award</span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.assign_award') }} </span>
                             </div>
 
                             <div class="panel-body pn">
@@ -45,11 +45,11 @@
                                         @endif
                                         {!! Form::open(['class' => 'form-horizontal']) !!}
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Employee </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.employee') }} </label>
                                             <div class="col-md-6">
                                                 <select class="select2-multiple form-control select-primary"
                                                         name="emp_id" required>
-                                                    <option value="" selected>Select One</option>
+                                                    <option value="" selected>{{ trans('main.select') }}</option>
                                                     @foreach($emps as $emp)
                                                         <option value="{{$emp->id}}">{{$emp->name}}</option>
                                                     @endforeach
@@ -60,11 +60,11 @@
 
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label"> Select Award </label>
+                                            <label class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.award') }} </label>
                                             <div class="col-md-6">
                                                 <select class="select2-multiple form-control select-primary"
                                                         name="award_id" required>
-                                                    <option value="" selected>Select One</option>
+                                                    <option value="" selected>{{ trans('main.select') }}</option>
                                                     @foreach($awards as $award)
                                                         <option value="{{$award->id}}">{{$award->name}}</option>
                                                     @endforeach
@@ -74,7 +74,7 @@
 
 
                                         <div class="form-group">
-                                            <label for="datepicker1" class="col-md-3 control-label"> Date </label>
+                                            <label for="datepicker1" class="col-md-3 control-label"> {{ trans('main.date') }} </label>
                                             <div class="col-md-6">
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
@@ -86,9 +86,9 @@
                                         </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Reason </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.reason') }} </label>
                                                 <div class="col-md-6">
-                                                        <input type="text" name="reason" id="input002" class="select2-single form-control" placeholder="reason" required>
+                                                        <input type="text" name="reason" id="input002" class="select2-single form-control" placeholder="{{ trans('main.reason') }}" required>
                                                 </div>
                                             </div>
 
@@ -98,10 +98,10 @@
                                             <label class="col-md-3 control-label"></label>
                                             <div class="col-md-2">
 
-                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
                                             </div>
                                             <div class="col-md-2"><a href="/assign-award" >
-                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                    <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                         </div>
                                     </div>
 

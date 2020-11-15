@@ -14,12 +14,12 @@
                             </a>
                         </li>
                         <li class="breadcrumb-active">
-                            <a href="/dashboard"> Dashboard </a>
+                            <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                         </li>
                         <li class="breadcrumb-link">
-                            <a href=""> Assets </a>
+                            <a href=""> {{ trans('main.awards') }} </a>
                         </li>
-                        <li class="breadcrumb-current-item"> Edit Award </li>
+                        <li class="breadcrumb-current-item"> {{ trans('main.edit_award') }} </li>
                     </ol>
             </div>
         </header>
@@ -32,7 +32,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Edit Award</span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.edit_award') }} </span>
                             </div>
 
                             <div class="panel-body pn">
@@ -47,7 +47,7 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Award </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.award') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="name" id="input002" class="select2-single form-control" value="@if($awards){{$awards->name}}@endif" required>
                                                 </div>
@@ -55,7 +55,7 @@
 
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Description </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.description') }} </label>
                                                 <div class="col-md-6">
                                                     <textarea class="select2-single form-control" rows="3" id="textarea1" name="description" required>@if($awards && $awards->description){{$awards->description}}@endif </textarea>
                                                 </div>
@@ -66,11 +66,11 @@
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
 
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
 
                                                 </div>
                                                 <div class="col-md-2"><a href="/edit-award/{id}" >
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                             </div>
 
                                         {!! Form::close() !!}

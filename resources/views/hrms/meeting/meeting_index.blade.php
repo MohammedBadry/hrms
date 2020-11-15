@@ -16,12 +16,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Home </a>
+                        <a href=""> {{ trans('main.home') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Meetings </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.meetings') }} </li>
                 </ol>
             </div>
         </header>
@@ -37,7 +37,7 @@
 
                 <!-- -------------- Calendar -------------- -->
                 {{--<div id="calendar" class="events-calendar"></div>--}}
-                <h2 class="text-muted" style="text-align:center"> SCHEDULE MEETINGS
+                <h2 class="text-muted" style="text-align:center"> {{ trans('main.schedule_meeting') }}
                     <a id="compose-event-btn" href="#calendarManagment" data-effect="mfp-flipInY">
                         <span class="fa fa-plus-square"></span>
                     </a>
@@ -84,21 +84,21 @@
         <div class="panel">
             <div class="panel-heading">
         <span class="panel-title">
-          <i class="fa fa-pencil-square-o"></i>New Calendar Meeting
+          <i class="fa fa-pencil-square-o"></i>{{ trans('main.schedule_meeting') }}
         </span>
             </div>
 
             <form method="post" action="/" id="calendarManagmentForm">
                 <div class="panel-body p25">
                     <div class="section-divider mt10 mb40">
-                        <span>Meeting Details</span>
+                        <span>{{ trans('main.meeting_details') }}</span>
                     </div>
 
                     <!---------------------- Coordinator -------------------->
                     <div class="section row">
                         <div class="col-md-12">
                             <label for="event_name" class="field prepend-icon">
-                                <input type="text" class="form-control" id="meeting_name" required>
+                                <input type="text" class="form-control" placeholder="{{ trans('main.meeting_title') }}" id="meeting_name" required>
                             </label>
                         </div>
                     </div>
@@ -108,12 +108,12 @@
                         <div class="col-xs-12">
                             <label class="field prepend-icon">
                         <textarea class="gui-textarea" id="meeting_description"
-                                  placeholder="Meeting Description" required></textarea>
+                                  placeholder="{{ trans('main.meeting_details') }}" required></textarea>
                                 <label for="comment" class="field-icon">
                                     <i class="fa fa-comments"></i>
                                 </label>
                                 <span class="input-footer hidden">
-                            <strong>Hint:</strong>Don't be negative or off topic! just be awesome...</span>
+                                </span>
                             </label>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="col-md-12">
                             <label for="firstname" class="field prepend-icon">
                                 <select id="meeting_cordinater" class="form-control" required>
-                                    <option value=""> Meeting Coordinator </option>
+                                    <option value=""> {{ trans('main.meeting_coordinator') }} </option>
                                     @foreach($coordinators as $coordinator)
                                         <option value="{{$coordinator['id']}}">{{$coordinator['name']}}</option>
                                     @endforeach
@@ -156,7 +156,7 @@
                         <div class="col-md-12">
                             <label for="firstname" class="field prepend-icon">
                                 <select id="meeting_attendees" class="form-control" multiple required>
-                                    <option value="">Meeting Attendees</option>
+                                    <option value="">{{ trans('main.meeting_attendees') }}</option>
                                     @foreach($users as $user)
                                         <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
@@ -169,7 +169,7 @@
                     <div class="section row hidden" id="message-section">
                         <div class="alert alert-info light alert-dismissable" id="alert-demo-1">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            Meeting created successfully!
+                            {{ trans('main.meeting_created_successfully') }}
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
 
                 </div>
                 <div class="panel-footer text-right">
-                    <button type="button" id="create-meeting" class="button btn-primary"> Create Meeting </button>
+                    <button type="button" id="create-meeting" class="button btn-primary"> {{ trans('main.schedule_meeting') }} </button>
                 </div>
             </form>
         </div>

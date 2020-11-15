@@ -16,12 +16,12 @@
                     </a>
                 </li>
                 <li class="breadcrumb-active">
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="/dashboard">{{ trans('main.dashboard') }}</a>
                 </li>
                 <li class="breadcrumb-link">
-                    <a href=""> Home </a>
+                    <a href=""> {{ trans('main.home') }} </a>
                 </li>
-                <li class="breadcrumb-current-item">Events</li>
+                <li class="breadcrumb-current-item">{{ trans('main.events') }}</li>
             </ol>
         </div>
     </header>
@@ -37,7 +37,7 @@
 
                 <!-- -------------- Calendar -------------- -->
                 {{--<div id="calendar" class="events-calendar"></div>--}}
-                <h2 class="text-muted" style="text-align:center"> SCHEDULE EVENTS
+                <h2 class="text-muted" style="text-align:center"> {{ trans('main.schedule_event') }}
                     <a id="compose-event-btn" href="#calendarManagment" data-effect="mfp-flipInY">
                         <span class="fa fa-plus-square"></span>
                     </a>
@@ -84,21 +84,21 @@
     <div class="panel">
         <div class="panel-heading">
         <span class="panel-title">
-          <i class="fa fa-pencil-square-o"></i>New Calendar Event
+          <i class="fa fa-pencil-square-o"></i>{{ trans('main.schedule_event') }}
         </span>
         </div>
 
         <form method="post" action="/" id="calendarManagmentForm">
             <div class="panel-body p25">
                 <div class="section-divider mt10 mb40">
-                    <span>Event Details</span>
+                    <span>{{ trans('main.event_details') }}</span>
                 </div>
 
                 <!---------------------- Coordinator -------------------->
                 <div class="section row">
                     <div class="col-md-12">
                         <label for="event_name" class="field prepend-icon">
-                            <input type="text" class="form-control" id="event_name" placeholder="Event title">
+                            <input type="text" class="form-control" id="event_name" placeholder="{{ trans('main.event_title') }}">
                         </label>
                     </div>
                 </div>
@@ -110,12 +110,13 @@
                     <div class="col-xs-12">
                         <label class="field prepend-icon">
                         <textarea class="gui-textarea" id="event_description"
-                                  placeholder="Event Description"></textarea>
+                                  placeholder="{{ trans('main.event_description') }}"></textarea>
                             <label for="comment" class="field-icon">
                                 <i class="fa fa-comments"></i>
                             </label>
                             <span class="input-footer hidden">
-                            <strong>Hint:</strong>Don't be negative or off topic! just be awesome...</span>
+
+                            </span>
                         </label>
                     </div>
                 </div>
@@ -130,7 +131,7 @@
                     <div class="col-md-12">
                         <label for="firstname" class="field prepend-icon">
                             <select id="event_cordinater" class="form-control">
-                                <option value=""> Event Coordinator </option>
+                                <option value=""> {{ trans('main.event_coordinator') }} </option>
                                 @foreach($coordinators as $coordinator)
                                 <option value="{{$coordinator['id']}}">{{$coordinator['name']}}</option>
                                 @endforeach
@@ -162,7 +163,7 @@
                     <div class="col-md-12">
                         <label for="firstname" class="field prepend-icon">
                             <select id="event_attendees" class="form-control" multiple>
-                                <option value="">Event Attendees</option>
+                                <option value="">{{ trans('main.event_attendees') }}</option>
                                 @foreach($users as $user)
                                 <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
@@ -204,7 +205,7 @@
                 <div class="section row hidden" id="message-section">
                     <div class="alert alert-info light alert-dismissable" id="alert-demo-1">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        Event created successfully!
+                        {{ trans('main.event_created_successfully') }}
                     </div>
                 </div>
 
@@ -213,7 +214,7 @@
 
             </div>
             <div class="panel-footer text-right">
-                <button type="button" id="create-event" class="button btn-primary">Create Event</button>
+                <button type="button" id="create-event" class="button btn-primary">{{ trans('main.schedule_event') }}</button>
             </div>
         </form>
     </div>

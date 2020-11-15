@@ -13,12 +13,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashboard') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Trainings </a>
+                        <a href=""> {{ trans('main.trainings') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Training Program Listings </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.program_listings') }} </li>
                 </ol>
             </div>
         </header>
@@ -36,7 +36,7 @@
                         <div class="box box-success">
                         <div class="panel">
                             <div class="panel-heading">
-                                <span class="panel-title hidden-xs"> Training Program Lists </span>
+                                <span class="panel-title hidden-xs"> {{ trans('main.program_listings') }} </span>
                             </div>
                             <div class="panel-body pn">
 
@@ -50,10 +50,10 @@
                                     <table class="table allcp-form theme-warning tc-checkbox-1 fs13">
                                         <thead>
                                         <tr class="bg-light">
-                                            <th class="text-center">Id</th>
-                                            <th class="text-center">Training Program</th>
-                                            <th class="text-center">Description</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">{{ trans('main.id') }}</th>
+                                            <th class="text-center">{{ trans('main.training_program') }}</th>
+                                            <th class="text-center">{{ trans('main.description') }}</th>
+                                            <th class="text-center">{{ trans('main.actions') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -68,15 +68,15 @@
                                                     <div class="btn-group text-right">
                                                         <button type="button"
                                                                 class="btn btn-success br2 btn-xs fs12 dropdown-toggle"
-                                                                data-toggle="dropdown" aria-expanded="false"> Action
+                                                                data-toggle="dropdown" aria-expanded="false"> {{ trans('main.action') }}
                                                             <span class="caret ml5"></span>
                                                         </button>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li>
-                                                                <a href="/edit-training-program/{{$program->id}}">Edit</a>
+                                                                <a href="/edit-training-program/{{$program->id}}">{{ trans('main.edit') }}</a>
                                                             </li>
                                                             <li>
-                                                                <a href="/delete-training-program/{{$program->id}}">Delete</a>
+                                                                <a href="/delete-training-program/{{$program->id}}">{{ trans('main.delete') }}</a>
                                                             </li>
                                                         </ul>
                                                     </div>

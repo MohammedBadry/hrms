@@ -14,12 +14,12 @@
                         </a>
                     </li>
                     <li class="breadcrumb-active">
-                        <a href="/dashboard"> Dashboard </a>
+                        <a href="/dashboard"> {{ trans('main.dashborad') }} </a>
                     </li>
                     <li class="breadcrumb-link">
-                        <a href=""> Training </a>
+                        <a href=""> {{ trans('main.trainings') }} </a>
                     </li>
-                    <li class="breadcrumb-current-item"> Edit Training Invite </li>
+                    <li class="breadcrumb-current-item"> {{ trans('main.edit') }} {{ trans('main.training_invite') }} </li>
                 </ol>
             </div>
         </header>
@@ -32,7 +32,7 @@
                         <div class="box box-success">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <span class="panel-title hidden-xs"> Edit Training Invite </span>
+                                    <span class="panel-title hidden-xs"> {{ trans('main.edit') }} {{ trans('main.training_invite') }} </span>
                                 </div>
 
                                 <div class="panel-body pn">
@@ -46,28 +46,28 @@
                                             {!! Form::open(['class' => 'form-horizontal']) !!}
 
                                             <div class="form-group">
-                                                <label for="multiselect2" class="col-md-3 control-label">Employee Name </label>
+                                                <label for="multiselect2" class="col-md-3 control-label">{{ trans('main.employee') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" class="form-control" value="{{$training->employee->name}}" readonly>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Select Programs </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.select') }} {{ trans('main.training_program') }} </label>
                                                 <div class="col-md-6">
                                                     {!! Form::select('program_id', $training->programs, $training->program, ['class' => 'select2-multiple form-control select-primary']) !!}
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label"> Description </label>
+                                                <label class="col-md-3 control-label"> {{ trans('main.description') }} </label>
                                                 <div class="col-md-6">
                                                     <input type="text" name="description" value="{{$training->description}}" id="input002" class="select2-single form-control" placeholder="description" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="datepicker1" class="col-md-3 control-label"> Date From </label>
+                                                <label for="datepicker1" class="col-md-3 control-label"> {{ trans('main.date_from') }} </label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <div class="input-group-addon">
@@ -79,7 +79,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="datepicker4" class="col-md-3 control-label"> Date To </label>
+                                                <label for="datepicker4" class="col-md-3 control-label"> {{ trans('main.date_to') }} </label>
                                                 <div class="col-md-6">
                                                     <div class="input-group">
                                                         <div class="input-group-addon">
@@ -93,10 +93,10 @@
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label"></label>
                                                 <div class="col-md-2">
-                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="Submit">
+                                                    <input type="submit" class="btn btn-bordered btn-info btn-block" value="{{ trans('main.submit') }}">
                                                 </div>
                                                 <div class="col-md-2"><a href="/add-training-invite" >
-                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="Reset"></a></div>
+                                                        <input type="button" class="btn btn-bordered btn-success btn-block" value="{{ trans('main.reset') }}"></a></div>
                                             </div>
                                         </div>
 
